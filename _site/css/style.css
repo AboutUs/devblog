@@ -1,0 +1,73 @@
+body{
+  background :#f6f6f6;
+  font-family : Arial, sans-serif;
+  margin : 0;
+  padding : 0;
+}
+
+a{
+  color : #66c;
+}
+#container{
+  color : #444; 
+  width : 670px;
+  padding : 0 40px;
+  margin :auto;
+  background: #fff;
+}
+
+
+#header{
+  position : relative;
+  z-index : 1000;
+  margin :0 ;
+  height : 50px;
+  padding: 15px 0;
+  border-bottom : 2px solid #f0f0f0;
+}
+#header h3{
+  margin : 0;
+  padding : 15px 0;
+  float : left;
+}
+#header span{
+  display : block;
+  float : right;
+  clear : right;
+}
+
+#header .view{
+  background : #d9d9d9;
+  color : #000;
+}
+
+#content{
+}
+
+.post {
+  margin : 0;
+  padding : 12px 0;
+}
+.post hr {
+  clear : both;
+  border : none;
+  margin : 0;
+  height : 0px;
+}
+.post .title {
+  margin : 0;
+  font-size : 1.2em;
+}
+
+.post .location {
+  font-size : 0.9em;
+  font-weight : bold;
+  margin : 5px 0;
+  color : #696969
+}
+
+.post .description {
+  color : #666;
+  line-height : 1.5;
+}
+
