@@ -5,9 +5,10 @@ author: sam
 ---
 
 This is the first post for AboutUs' programming blog.  The blog's
-powered by git, jekyll, nginx.  To create a post we just create a
-text file in the git repository in our favorite editor (i.e.
-vim).  The posts go in a `_posts` directory and look like this:
+powered by git, jekyll and nginx.  To create a post we just
+create a text file in the git repository in our favorite editor
+(i.e.  vim).  The posts go in a `_posts` directory and look like
+this:
 
     devblog [master*] $ ls _{posts,layouts,site}
     _layouts:
