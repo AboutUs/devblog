@@ -5,20 +5,14 @@ author: sam
 ---
 
 This is the first post for AboutUs' programming blog.  The blog's
-powered by git, jekyll and nginx.  To create a post we just
-create a text file in the git repository in our favorite editor
-(i.e.  vim).  The posts go in a `_posts` directory and look like
-this:
+powered by git, jekyll and nginx.  To create a post we create a
+text file in the git repository in our favorite editor (i.e.
+vim).  The posts go in a `_posts` directory and look like this:
 
-    devblog [master*] $ ls _{posts,layouts,site}
-    _layouts:
-    default.html
+    devblog [master*] $ ls _posts
 
     _posts:
     2011-04-08-initial-commit.markdown
-
-    _site:
-    2011            atom.xml        config.yml      css             index.html
 
 
 [Jekyll](http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html)
@@ -40,10 +34,10 @@ regenerates the site every time you save a file.
     [2011-04-11 20:50:22] regeneration: 1 files changed
     [2011-04-11 20:50:27] regeneration: 1 files changed
 
-On the server I installed jekyll to generate static html files
-for nginx to serve.
+On the server jekyll generates static html files for nginx to
+serve.
 
-Don't worry.  It barely has _any_ dependencies.
+It barely has _any_ dependencies.
 
     devblog # gem install jekyll --no-rdoc --no-ri
     Building native extensions.  This could take a while...
@@ -73,7 +67,7 @@ someone pushes a change.
 
 Nginx serves the static files in `/www/aboutus/devblog`.
 
-Deploying is as easy as `git push`.
+Deploying is just a `git push`.
 
     devblog [master] $ git push 
     Counting objects: 23, done.
