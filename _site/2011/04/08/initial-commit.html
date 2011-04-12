@@ -19,14 +19,17 @@
       <div id='content'>
         <p>This is the first post for AboutUs&#8217; programming blog. The blog&#8217;s powered by git, jekyll, nginx. To create a post we just create a text file in the git repository in our favorite editor (i.e. vim). The posts go in a <code>_posts</code> directory and look like this:</p>
 
-<pre><code>devblog [master*] $ ls _{posts,layouts}/
-_layouts/:
+<pre><code>devblog [master*] $ ls _{posts,layouts,site}
+_layouts:
 default.html
 
-_posts/:
-2011-04-08-initial-commit.markdown</code></pre>
+_posts:
+2011-04-08-initial-commit.markdown
 
-<p>Jekyll is used to convert the content textile, markdown, and html templates into a static html site.</p>
+_site:
+2011            atom.xml        config.yml      css             index.html</code></pre>
+
+<p><a href='http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html'>Jekyll</a> is used to convert the content textile, markdown, and html templates into a static html site.</p>
 
 <pre><code>devblog [master*] $ jekyll
 Configuration from /www/aboutus/devblog/_config.yml
@@ -46,7 +49,7 @@ Auto-regenerating enabled: . -&gt; ./_site
 
 <p>Don&#8217;t worry. It barely has <em>any</em> dependencies.</p>
 
-<pre><code>~# gem install jekyll --no-rdoc --no-ri
+<pre><code>devblog # gem install jekyll --no-rdoc --no-ri
 Building native extensions.  This could take a while...
 Successfully installed liquid-2.2.2
 Successfully installed fast-stemmer-1.0.0
@@ -56,6 +59,24 @@ Successfully installed syntax-1.0.0
 Successfully installed maruku-0.6.0
 Successfully installed jekyll-0.10.0
 7 gems installed</code></pre>
+
+<p>There&#8217;s a git post-receive hook that regenerates the site whenever someone pushes a change.</p>
+
+<pre><code>devblog # vi .git/hooks/post-receive
+#!/bin/sh
+#
+GIT_REPO=/www/aboutus/devblog.git
+TMP_GIT_CLONE=/tmp/devblog
+PUBLIC_WWW=/www/aboutus/devblog
+
+git clone $GIT_REPO $TMP_GIT_CLONE
+jekyll --no-auto $TMP_GIT_CLONE $PUBLIC_WWW
+rm -Rf $TMP_GIT_CLONE
+exit</code></pre>
+
+<p>Nginx serves the static files in <code>/www/aboutus/devblog</code>.</p>
+
+<p>Deploying is as easy as <code>git push</code>.</p>
       </div>
       <div id='footer'>
         &copy; 2011 AboutUs Inc.

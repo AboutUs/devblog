@@ -8,14 +8,19 @@ powered by git, jekyll, nginx.  To create a post we just create a
 text file in the git repository in our favorite editor (i.e.
 vim).  The posts go in a `_posts` directory and look like this:
 
-    devblog [master*] $ ls _{posts,layouts}/
-    _layouts/:
+    devblog [master*] $ ls _{posts,layouts,site}
+    _layouts:
     default.html
 
-    _posts/:
+    _posts:
     2011-04-08-initial-commit.markdown
 
-Jekyll is used to convert the content textile, markdown, and html
+    _site:
+    2011            atom.xml        config.yml      css             index.html
+
+
+[Jekyll](http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html)
+is used to convert the content textile, markdown, and html
 templates into a static html site.
 
     devblog [master*] $ jekyll
@@ -49,9 +54,8 @@ Don't worry.  It barely has _any_ dependencies.
     Successfully installed jekyll-0.10.0
     7 gems installed
 
-There's a git post-receive hook that generates the site whenever
-someone pushes a post or a change.
-
+There's a git post-receive hook that regenerates the site whenever
+someone pushes a change.
 
     devblog # vi .git/hooks/post-receive
     #!/bin/sh
@@ -64,3 +68,7 @@ someone pushes a post or a change.
     jekyll --no-auto $TMP_GIT_CLONE $PUBLIC_WWW
     rm -Rf $TMP_GIT_CLONE
     exit
+
+Nginx serves the static files in `/www/aboutus/devblog`.
+
+Deploying is as easy as `git push`.
