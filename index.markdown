@@ -9,6 +9,7 @@ title: Devs @ AboutUs.org
     <h2 class='short title'>
       <a href="{{ post.url }}">{{ post.title }}</a>
     </h2>
+    <div class='short location'>{% include author.html %}</div>
     <div class='short location'>{{ post.date | date_to_string }}</div>
     <div class='long description'>{{ post.content }}</div>
     <hr>
