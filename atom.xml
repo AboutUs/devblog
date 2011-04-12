@@ -4,22 +4,17 @@ layout: nil
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>Devblog</title>
- <link href="http://.github.com/devblog/atom.xml" rel="self"/>
- <link href="http://.github.com/devblog/"/>
+ <title>AboutUs Dev Blog</title>
+ <link href="http://dev.aboutus.org/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://.github.com/devblog/</id>
- <author>
-   <name>Dr Nic Williams</name>
-   <email>williams@gmail.com</email>
- </author>
+ <id>http://dev.aboutus.org</id>
 
  {% for post in site.posts %}
  <entry>
    <title>{{ post.title }}</title>
-   <link href="http://.github.com/devblog{{ post.url }}"/>
+   <link href="{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>http://.github.com/devblog{{ post.id }}</id>
+   <id>{{ post.id }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
  {% endfor %}
