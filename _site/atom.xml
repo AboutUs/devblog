@@ -4,7 +4,7 @@
  <title>Devblog</title>
  <link href="http://.github.com/devblog/atom.xml" rel="self"/>
  <link href="http://.github.com/devblog/"/>
- <updated>2011-04-11T23:28:47-07:00</updated>
+ <updated>2011-04-11T23:30:21-07:00</updated>
  <id>http://.github.com/devblog/</id>
  <author>
    <name>Dr Nic Williams</name>
@@ -76,7 +76,21 @@ exit&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Nginx serves the static files in &lt;code&gt;/www/aboutus/devblog&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Deploying is as easy as &lt;code&gt;git push&lt;/code&gt;.&lt;/p&gt;</content>
+&lt;p&gt;Deploying is as easy as &lt;code&gt;git push&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;devblog [master] $ git push 
+Counting objects: 23, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (12/12), 925 bytes, done.
+Total 12 (delta 6), reused 0 (delta 0)
+remote: Initialized empty Git repository in /tmp/devblog/.git/
+remote: Configuration from /tmp/devblog/_config.yml
+remote: Building site: /tmp/devblog -&amp;gt; /www/aboutus/devblog
+remote: Successfully generated site: /tmp/devblog -&amp;gt; /www/aboutus/devblog
+Killed by signal 1.
+To blog@devblog:/www/aboutus/devblog.git
+   12aa781..ab54f06  master -&amp;gt; master&lt;/code&gt;&lt;/pre&gt;</content>
  </entry>
  
  

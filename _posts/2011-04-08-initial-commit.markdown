@@ -73,3 +73,18 @@ someone pushes a change.
 Nginx serves the static files in `/www/aboutus/devblog`.
 
 Deploying is as easy as `git push`.
+
+    devblog [master] $ git push 
+    Counting objects: 23, done.
+    Delta compression using up to 2 threads.
+    Compressing objects: 100% (9/9), done.
+    Writing objects: 100% (12/12), 925 bytes, done.
+    Total 12 (delta 6), reused 0 (delta 0)
+    remote: Initialized empty Git repository in /tmp/devblog/.git/
+    remote: Configuration from /tmp/devblog/_config.yml
+    remote: Building site: /tmp/devblog -> /www/aboutus/devblog
+    remote: Successfully generated site: /tmp/devblog -> /www/aboutus/devblog
+    Killed by signal 1.
+    To blog@devblog:/www/aboutus/devblog.git
+       12aa781..ab54f06  master -> master
+
