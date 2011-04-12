@@ -4,7 +4,7 @@
  <title>Devblog</title>
  <link href="http://.github.com/devblog/atom.xml" rel="self"/>
  <link href="http://.github.com/devblog/"/>
- <updated>2011-04-10T11:18:18-07:00</updated>
+ <updated>2011-04-11T20:51:44-07:00</updated>
  <id>http://.github.com/devblog/</id>
  <author>
    <name>Dr Nic Williams</name>
@@ -13,11 +13,34 @@
 
  
  <entry>
-   <title>Welcome to 'Devblog'</title>
-   <link href="http://.github.com/devblog/2011/04/08/first-post.html"/>
+   <title>Initial Commit</title>
+   <link href="http://.github.com/devblog/2011/04/08/initial-commit.html"/>
    <updated>2011-04-08T00:00:00-07:00</updated>
-   <id>http://.github.com/devblog/2011/04/08/first-post</id>
-   <content type="html">&lt;p&gt;Devblog is going to be an awesome project.&lt;/p&gt;</content>
+   <id>http://.github.com/devblog/2011/04/08/initial-commit</id>
+   <content type="html">&lt;p&gt;This is the first post for AboutUs&amp;#8217; programming blog. The blog&amp;#8217;s powered by git, jekyll, nginx. To create a post we just create a text file in the git repository in our favorite editor (i.e. vim). The posts go in a &lt;code&gt;_posts&lt;/code&gt; directory and look like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;devblog [master*] $ ls _{posts,layouts}/
+_layouts/:
+default.html
+
+_posts/:
+2011-04-08-initial-commit.markdown&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Jekyll is used to convert the content textile, markdown, and html templates into a static html site.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;devblog [master*] $ jekyll
+Configuration from /www/aboutus/devblog/_config.yml
+Building site: . -&amp;gt; ./_site
+Successfully generated site: . -&amp;gt; ./_site&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Jekyll&amp;#8217;s &lt;code&gt;--auto&lt;/code&gt; option is pretty nice for development. It regenerates the site every time you save a file.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;devblog [master*] $ jekyll --auto
+Configuration from /www/aboutus/devblog/_config.yml
+Auto-regenerating enabled: . -&amp;gt; ./_site
+[2011-04-11 20:49:52] regeneration: 8 files changed
+[2011-04-11 20:50:22] regeneration: 1 files changed
+[2011-04-11 20:50:27] regeneration: 1 files changed&lt;/code&gt;&lt;/pre&gt;</content>
  </entry>
  
  

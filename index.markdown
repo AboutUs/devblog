@@ -1,10 +1,10 @@
 ---
 layout: default
-title: AboutUs Dev Team Blog
+title: AboutUs Dev Blog
 ---
 
 <div class="posts">
-{% for post in site.posts %} 
+{% for post in site.posts %}
   <div class='post'>
     <h2 class='short title'>
       <a href="{{ post.url }}">{{ post.title }}</a>
