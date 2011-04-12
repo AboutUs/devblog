@@ -52,9 +52,15 @@ Don't worry.  It barely has _any_ dependencies.
 There's a git post-receive hook that generates the site whenever
 someone pushes a post or a change.
 
-    devblog # vi .git/hooks/post-receive.sample 
-    devblog # cat .git/hooks/post-receive.sample 
 
+    devblog # vi .git/hooks/post-receive
     #!/bin/sh
-    git reset --hard master
-    jekyll
+    #
+    GIT_REPO=/www/aboutus/devblog.git
+    TMP_GIT_CLONE=/tmp/devblog
+    PUBLIC_WWW=/www/aboutus/devblog
+
+    git clone $GIT_REPO $TMP_GIT_CLONE
+    jekyll --no-auto $TMP_GIT_CLONE $PUBLIC_WWW
+    rm -Rf $TMP_GIT_CLONE
+    exit
