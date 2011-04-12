@@ -33,3 +33,18 @@ regenerates the site every time you save a file.
     [2011-04-11 20:50:22] regeneration: 1 files changed
     [2011-04-11 20:50:27] regeneration: 1 files changed
 
+On the server I installed jekyll to generate static html files
+for nginx to serve.
+
+Don't worry.  It barely has _any_ dependencies.
+
+    ~# gem install jekyll --no-rdoc --no-ri
+    Building native extensions.  This could take a while...
+    Successfully installed liquid-2.2.2
+    Successfully installed fast-stemmer-1.0.0
+    Successfully installed classifier-1.3.3
+    Successfully installed directory_watcher-1.4.0
+    Successfully installed syntax-1.0.0
+    Successfully installed maruku-0.6.0
+    Successfully installed jekyll-0.10.0
+    7 gems installed
