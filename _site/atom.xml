@@ -1,18 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>AboutUs Dev Blog</title>
- <link href="http://dev.aboutus.org/"/>
- <updated>2011-04-11T23:39:58-07:00</updated>
- <id>http://dev.aboutus.org</id>
+  <title>Dev @ AboutUs.org </title>
+  <link href="http://dev.aboutus.org/"/>
+  <link type="application/atom+xml" rel="self" href="http://dev.aboutus.org/atom.xml"/>
+  <updated>2011-04-11T23:45:19-07:00</updated>
+  <id>http://dev.aboutus.org/</id>
+  <author>
+    <name>AboutUs</name>
+    <email>info@aboutus.org</email>
+  </author>
 
- 
- <entry>
-   <title>Initial Commit</title>
-   <link href="/2011/04/08/initial-commit.html"/>
-   <updated>2011-04-08T00:00:00-07:00</updated>
-   <id>/2011/04/08/initial-commit</id>
-   <content type="html">&lt;p&gt;This is the first post for AboutUs&amp;#8217; programming blog. The blog&amp;#8217;s powered by git, jekyll, nginx. To create a post we just create a text file in the git repository in our favorite editor (i.e. vim). The posts go in a &lt;code&gt;_posts&lt;/code&gt; directory and look like this:&lt;/p&gt;
+  
+  <entry>
+    <id>http://dev.aboutus.org/2011/04/08/initial-commit</id>
+    <link type="text/html" rel="alternate" href="http://dev.aboutus.org/2011/04/08/initial-commit.html"/>
+    <title>Initial Commit</title>
+    <updated>2011-04-08T00:00:00-07:00</updated>
+    <author>
+      <name>sam</name>
+      <uri>http://dev.aboutus.org/</uri>
+    </author>
+    <content type="html">&lt;p&gt;This is the first post for AboutUs&amp;#8217; programming blog. The blog&amp;#8217;s powered by git, jekyll, nginx. To create a post we just create a text file in the git repository in our favorite editor (i.e. vim). The posts go in a &lt;code&gt;_posts&lt;/code&gt; directory and look like this:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;devblog [master*] $ ls _{posts,layouts,site}
 _layouts:
@@ -86,7 +95,8 @@ remote: Successfully generated site: /tmp/devblog -&amp;gt; /www/aboutus/devblog
 Killed by signal 1.
 To blog@devblog:/www/aboutus/devblog.git
    12aa781..ab54f06  master -&amp;gt; master&lt;/code&gt;&lt;/pre&gt;</content>
- </entry>
- 
+  </entry>
+  
  
 </feed>
+
