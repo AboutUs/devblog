@@ -38,7 +38,7 @@ for nginx to serve.
 
 Don't worry.  It barely has _any_ dependencies.
 
-    ~# gem install jekyll --no-rdoc --no-ri
+    devblog # gem install jekyll --no-rdoc --no-ri
     Building native extensions.  This could take a while...
     Successfully installed liquid-2.2.2
     Successfully installed fast-stemmer-1.0.0
@@ -48,3 +48,13 @@ Don't worry.  It barely has _any_ dependencies.
     Successfully installed maruku-0.6.0
     Successfully installed jekyll-0.10.0
     7 gems installed
+
+There's a git post-receive hook that generates the site whenever
+someone pushes a post or a change.
+
+    devblog # vi .git/hooks/post-receive.sample 
+    devblog # cat .git/hooks/post-receive.sample 
+
+    #!/bin/sh
+    git reset --hard master
+    jekyll
