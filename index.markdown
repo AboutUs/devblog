@@ -1,6 +1,6 @@
 ---
 layout: default
-title: AboutUs Dev Blog
+title: Devs @ AboutUs.org
 ---
 
 <div class="posts">
