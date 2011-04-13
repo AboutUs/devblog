@@ -4,7 +4,7 @@
   <title>Dev @ AboutUs.org </title>
   <link href="http://dev.aboutus.org/"/>
   <link type="application/atom+xml" rel="self" href="http://dev.aboutus.org/atom.xml"/>
-  <updated>2011-04-11T23:58:51-07:00</updated>
+  <updated>2011-04-13T12:04:59-07:00</updated>
   <id>http://dev.aboutus.org/</id>
   <author>
     <name>AboutUs</name>
@@ -21,17 +21,12 @@
       <name>sam</name>
       <uri>http://dev.aboutus.org/</uri>
     </author>
-    <content type="html">&lt;p&gt;This is the first post for AboutUs&amp;#8217; programming blog. The blog&amp;#8217;s powered by git, jekyll, nginx. To create a post we just create a text file in the git repository in our favorite editor (i.e. vim). The posts go in a &lt;code&gt;_posts&lt;/code&gt; directory and look like this:&lt;/p&gt;
+    <content type="html">&lt;p&gt;This is the first post for AboutUs&amp;#8217; programming blog. The blog&amp;#8217;s powered by git, jekyll and nginx. To create a post we create a text file in the git repository in our favorite editor (i.e. vim). The posts go in a &lt;code&gt;_posts&lt;/code&gt; directory and look like this:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;devblog [master*] $ ls _{posts,layouts,site}
-_layouts:
-default.html
+&lt;pre&gt;&lt;code&gt;devblog [master*] $ ls _posts
 
 _posts:
-2011-04-08-initial-commit.markdown
-
-_site:
-2011            atom.xml        config.yml      css             index.html&lt;/code&gt;&lt;/pre&gt;
+2011-04-08-initial-commit.markdown&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;a href='http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html'&gt;Jekyll&lt;/a&gt; is used to convert the content textile, markdown, and html templates into a static html site.&lt;/p&gt;
 
@@ -49,9 +44,9 @@ Auto-regenerating enabled: . -&amp;gt; ./_site
 [2011-04-11 20:50:22] regeneration: 1 files changed
 [2011-04-11 20:50:27] regeneration: 1 files changed&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;On the server I installed jekyll to generate static html files for nginx to serve.&lt;/p&gt;
+&lt;p&gt;On the server jekyll generates static html files for nginx to serve.&lt;/p&gt;
 
-&lt;p&gt;Don&amp;#8217;t worry. It barely has &lt;em&gt;any&lt;/em&gt; dependencies.&lt;/p&gt;
+&lt;p&gt;It barely has &lt;em&gt;any&lt;/em&gt; dependencies.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;devblog # gem install jekyll --no-rdoc --no-ri
 Building native extensions.  This could take a while...
@@ -80,7 +75,7 @@ exit&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Nginx serves the static files in &lt;code&gt;/www/aboutus/devblog&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Deploying is as easy as &lt;code&gt;git push&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Deploying is just a &lt;code&gt;git push&lt;/code&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;devblog [master] $ git push 
 Counting objects: 23, done.

@@ -1,9 +1,37 @@
-{% if page.author == 'sam' or post.author == 'sam' %}
-  Sam Goldstein //
-  <a href="http://twitter.com/_samg">@samg</a> //
-  <a href="http://github.com/samg">github</a>
+{% if "Please read this message" == "Here is a formatting example" %}
+  <div class="name">Your name/div>
+
+  <img class="avatar" src="http://www.gravatar.com/avatar/00001111222223333344455555?s=70">
+  <p class="about">
+    Lorem Ipsum
+  </p>
+
+  <ul class="meta">
+    <li><a href="Site I care about">Some site</a></li>
+  </ul>
+{% elsif page.author == 'sam' or post.author == 'sam' %}
+  <div class="name">Sam Goldstein</div>
+
+  <img class="avatar" src="http://www.gravatar.com/avatar/1391e75fba1f7f238dd7c400ed06a008?s=70">
+  <p class="about">
+    I'm a programmer and the Director of Engineering at AboutUs. I
+    lived most of my life in Oakland, California (visit). Now I live
+    in Portland, Oregon.
+  </p>
+
+  <ul class="meta">
+    <li><a href="http://twitter.com/_samg">@samg</a></li>
+    <li><a href="http://github.com/samg">github</a></li>
+  </ul>
 {% elsif page.author == 'jd' or post.author == 'jd' %}
-  JD Huntington
+  <img class="avatar" src="http://www.gravatar.com/avatar/a3d6887041bc564a5d60cdc811ae4ef9?s=70">
+  <div class="name">JD Huntington</div>
+
+  <ul class="meta">
+    <li><a href="http://twitter.com/jdhuntington" class="twitter">@jdhuntington</a></li>
+    <li><a href="http://twitter.com/jdhuntington" class="github">github</a></li>
+    <li><a href="http://jdhuntington.com">Personal Hompage</a></li>
+  </ul>
 {% elsif page.author == 'thomas' or post.author == 'thomas' %}
   Thomas Luce
 {% elsif page.author == 'matt' or post.author == 'matt' %}

@@ -1,18 +1,27 @@
 ---
 layout: default
-title: Devs @ AboutUs.org
+title: AboutUs.org Developer Blog
 ---
 
-<div class="posts">
+<div class="index">
+<h1>Recent posts...</h1>
+<ul class="posts">
 {% for post in site.posts %}
-  <div class='post'>
-    <h2 class='short title'>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </h2>
-    <div class='by-line'>{% include author.html %}</div>
-    <div class='short location'>{{ post.date | date_to_string }}</div>
-    <div class='long description'>{{ post.content }}</div>
-    <hr>
-  </div>
+  <li>
+    <div class="meta-data">
+    <div class="author">
+    {% include author_short.html %}
+    </div>
+    <div class="when">
+    {{ post.date | date_to_string }}
+    </div>
+    </div>
+    <div class="content">
+    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    <div class="synopsis">{{ post.synopsis }}</div>
+    </div>
+    <div class="clearall"></div>
+  </li>
 {% endfor %}
+</ul>
 </div>

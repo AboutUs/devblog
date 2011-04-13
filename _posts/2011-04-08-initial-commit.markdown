@@ -1,7 +1,8 @@
 ---
-layout: post
+layout: default
 title: Initial Commit
 author: sam
+synopsis: This is the first post for AboutUs' programming blog.
 ---
 
 This is the first post for AboutUs' programming blog.  The blog's
