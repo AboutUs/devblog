@@ -4,13 +4,43 @@
   <title>Dev @ AboutUs.org </title>
   <link href="http://dev.aboutus.org/"/>
   <link type="application/atom+xml" rel="self" href="http://dev.aboutus.org/atom.xml"/>
-  <updated>2011-04-13T12:04:59-07:00</updated>
+  <updated>2011-04-18T13:39:27-07:00</updated>
   <id>http://dev.aboutus.org/</id>
   <author>
     <name>AboutUs</name>
     <email>info@aboutus.org</email>
   </author>
 
+  
+  <entry>
+    <id>http://dev.aboutus.org/2011/04/18/foo</id>
+    <link type="text/html" rel="alternate" href="http://dev.aboutus.org/2011/04/18/foo.html"/>
+    <title>Sort == Srot</title>
+    <updated>2011-04-18T00:00:00-07:00</updated>
+    <author>
+      <name>thomas</name>
+      <uri>http://dev.aboutus.org/</uri>
+    </author>
+    <content type="html">&lt;p&gt;This may be something well-known to a lot of people, but it&amp;#8217;s one that I just recently found out about. We were working with large volumes of data for our &lt;a href='http://www.aboutus.org/Learn/Keep-Track-of-Inbound-Links'&gt;redirectory&lt;/a&gt; feature on (http://www.aboutus.org). For part of this we had to sort about 100 GB of tab-separtated data. Because we wanted to do the simplest thing that would work, GNU &lt;code&gt;sort&lt;/code&gt; came to the rescue.&lt;/p&gt;
+
+&lt;p&gt;For those of you who aren&amp;#8217;t familiar with &lt;code&gt;sort&lt;/code&gt;, it is a standard UNIX/Linux tool that sorts the input it gets on standard in, and returns the new list on stdout. It has all kinds of options to control the sort order, algorithms used, etc., but some of them aren&amp;#8217;t too obvious. For the basic list, check out the &lt;a href='http://linux.die.net/man/1/sort'&gt;man-page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Before I go on, a brief exercise. Lexically sor the following lines:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; foo
+ far
+ f.o&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you guessed &amp;#8220;f,o, far, foo&amp;#8221;, congratulations! You&amp;#8217;re a sane, normal person. If, on the other hand, you guess &amp;#8220;far, f.o, foo&amp;#8221;, you are GNU &lt;code&gt;sort&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This was a serious problem for us because it meant that some of our data was out of order, making our processing scripts angry. We would have &lt;code&gt;go-daddy.com&lt;/code&gt; stuffed in the middle of a long list of &lt;code&gt;godaddy.com&lt;/code&gt;&amp;#8217;s. Not good.&lt;/p&gt;
+
+&lt;p&gt;The solution lies in a little-known environment variable that controls your terminal language and character set, &amp;#8220;LC_ALL&amp;#8221; (actually, LC_LOCALE but LC_ALL works too). If you set that bit of magic to &amp;#8220;C&amp;#8221;, things work as you would expect.&lt;/p&gt;
+
+&lt;p&gt;By default on most modern linux installs, the system locale defaults to US-english using UTF-8 character set. Beyond setting language and such, it also sets things like how characters are ordered as far as a computer is concerned. For whatever reason, punctuation is handled as &amp;#8220;higher&amp;#8221; than letters, even though they are &amp;#8220;lower&amp;#8221; in the standard character set charts, and because &lt;code&gt;sort&lt;/code&gt; uses &lt;code&gt;strcmp&lt;/code&gt;, character ordering is very important.&lt;/p&gt;
+
+&lt;p&gt;So there you go. If you are trying to sort a ton of data, and it&amp;#8217;s not coming out sorted, give &lt;code&gt;export LC_ALL=C&lt;/code&gt; a try. It worked for me!&lt;/p&gt;</content>
+  </entry>
   
   <entry>
     <id>http://dev.aboutus.org/2011/04/08/initial-commit</id>

@@ -1,0 +1,47 @@
+---
+layout: default
+title: Sort == Srot
+author: thomas
+synopsis: How locales can effect sort-order
+---
+
+This may be something well-known to a lot of people, but it's one that I just
+recently found out about. We were working with large volumes of data for our
+[redirectory](http://www.aboutus.org/Learn/Keep-Track-of-Inbound-Links) feature
+on (http://www.aboutus.org). For part of this we had to sort about 100 GB of
+tab-separtated data. Because we wanted to do the simplest thing that would
+work, GNU `sort` came to the rescue.
+
+For those of you who aren't familiar with `sort`, it is a standard UNIX/Linux
+tool that sorts the input it gets on standard in, and returns the new list on
+stdout. It has all kinds of options to control the sort order, algorithms used,
+etc., but some of them aren't too obvious. For the basic list, check out the
+[man-page](http://linux.die.net/man/1/sort).
+
+Before I go on, a brief exercise. Lexically sor the following lines:
+
+     foo
+     far
+     f.o
+
+If you guessed "f,o, far, foo", congratulations! You're a sane, normal person.
+If, on the other hand, you guess "far, f.o, foo", you are GNU `sort`.
+
+This was a serious problem for us because it meant that some of our data was
+out of order, making our processing scripts angry. We would have `go-daddy.com`
+stuffed in the middle of a long list of `godaddy.com`'s. Not good.
+
+The solution lies in a little-known environment variable that controls your
+terminal language and character set, "LC_ALL" (actually, LC_LOCALE but LC_ALL
+works too). If you set that bit of magic to "C", things work as you would
+expect.
+
+By default on most modern linux installs, the system locale defaults to
+US-english using UTF-8 character set. Beyond setting language and such, it also
+sets things like how characters are ordered as far as a computer is concerned.
+For whatever reason, punctuation is handled as "higher" than letters, even
+though they are "lower" in the standard character set charts, and because
+`sort` uses `strcmp`, character ordering is very important.
+
+So there you go. If you are trying to sort a ton of data, and it's not coming
+out sorted, give `export LC_ALL=C` a try. It worked for me!
