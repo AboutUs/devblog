@@ -18,7 +18,7 @@ stdout. It has all kinds of options to control the sort order, algorithms used,
 etc., but some of them aren't too obvious. For the basic list, check out the
 [man-page](http://linux.die.net/man/1/sort).
 
-Before I go on, a brief exercise. Lexically sor the following lines:
+Before I go on, a brief exercise. Lexically sort the following lines:
 
      foo
      far
