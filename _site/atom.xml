@@ -4,7 +4,7 @@
   <title>Dev @ AboutUs.org </title>
   <link href="http://dev.aboutus.org/"/>
   <link type="application/atom+xml" rel="self" href="http://dev.aboutus.org/atom.xml"/>
-  <updated>2011-04-18T13:39:27-07:00</updated>
+  <updated>2011-04-18T21:41:41-07:00</updated>
   <id>http://dev.aboutus.org/</id>
   <author>
     <name>AboutUs</name>
@@ -13,8 +13,8 @@
 
   
   <entry>
-    <id>http://dev.aboutus.org/2011/04/18/foo</id>
-    <link type="text/html" rel="alternate" href="http://dev.aboutus.org/2011/04/18/foo.html"/>
+    <id>http://dev.aboutus.org/2011/04/18/sort-==-srot</id>
+    <link type="text/html" rel="alternate" href="http://dev.aboutus.org/2011/04/18/sort-%3D%3D-srot.html"/>
     <title>Sort == Srot</title>
     <updated>2011-04-18T00:00:00-07:00</updated>
     <author>
