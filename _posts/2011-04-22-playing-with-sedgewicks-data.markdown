@@ -2,7 +2,7 @@
 layout: default
 author: ward
 synopsis: Sedgewick wants CS students to learn from real data. I give it a try rummaging through the many datasets he offers online in support of his introductory algorithms textbooks. 
-published: false
+published: true
 ---
 Pittsburg University CS Professor Robert Sedgewick suggests students will learn better and stay engaged when writing programs that make sense of real data. I suggested to the newly forming Portland Data Science meetup that we might likewise benefit from exploring data together and gave Sedgewick's state adjacencies as an example. Here is the data and a few lines from the front:
 
