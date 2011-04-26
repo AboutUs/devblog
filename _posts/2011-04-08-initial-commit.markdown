@@ -1,7 +1,7 @@
 ---
 layout: default
 author: sam
-synopsis: This is the first post for AboutUs' programming blog.
+synopsis: This is the first post for AboutUs' programming blog.  I describe our hacker-centric blogger setup powered by git, jekyll, and nginx.
 ---
 
 This is the first post for AboutUs' programming blog.  The blog's
