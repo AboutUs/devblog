@@ -55,17 +55,17 @@ someone pushes a change.
 
     devblog # vi .git/hooks/post-receive
 
-{% highlight ruby %}
-    #!/bin/sh
-    #
-    GIT_REPO=/www/aboutus/devblog.git
-    TMP_GIT_CLONE=/tmp/devblog
-    PUBLIC_WWW=/www/aboutus/devblog
+{% highlight bash %}
+#!/bin/sh
+#
+GIT_REPO=/www/aboutus/devblog.git
+TMP_GIT_CLONE=/tmp/devblog
+PUBLIC_WWW=/www/aboutus/devblog
 
-    git clone $GIT_REPO $TMP_GIT_CLONE
-    jekyll --no-auto $TMP_GIT_CLONE $PUBLIC_WWW
-    rm -Rf $TMP_GIT_CLONE
-    exit
+git clone $GIT_REPO $TMP_GIT_CLONE
+jekyll --no-auto $TMP_GIT_CLONE $PUBLIC_WWW
+rm -Rf $TMP_GIT_CLONE
+exit
 {% endhighlight %}
 
 Nginx serves the static files in `/www/aboutus/devblog`.

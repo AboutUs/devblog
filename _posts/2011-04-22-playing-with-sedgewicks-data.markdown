@@ -33,10 +33,12 @@ This raises the question, what little extra bit of information would allow a muc
 
 Here is the perl program I used to convert the dataset to dot format:
 
-	@lines = `cat contiguous-usa.txt`;
-	open D, ">contiguous-usa.dot";
-	print D "graph US {\nnode [style=filled,color=yellow]";
-	for (@lines) { print D "$1 -- $2;\n" if /(\w\w) (\w\w)/; }
-	print D "}\n";
+{% highlight perl %}
+@lines = `cat contiguous-usa.txt`;
+open D, ">contiguous-usa.dot";
+print D "graph US {\nnode [style=filled,color=yellow]";
+for (@lines) { print D "$1 -- $2;\n" if /(\w\w) (\w\w)/; }
+print D "}\n";
+{% endhighlight %}
 
 I consider this kind of programming a warm-up for serious work. But warming up is very important in a field where the opportunities are so diverse.
