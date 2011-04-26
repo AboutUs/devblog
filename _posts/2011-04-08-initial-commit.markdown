@@ -54,6 +54,8 @@ There's a git post-receive hook that regenerates the site whenever
 someone pushes a change.
 
     devblog # vi .git/hooks/post-receive
+
+{% highlight ruby %}
     #!/bin/sh
     #
     GIT_REPO=/www/aboutus/devblog.git
@@ -64,6 +66,7 @@ someone pushes a change.
     jekyll --no-auto $TMP_GIT_CLONE $PUBLIC_WWW
     rm -Rf $TMP_GIT_CLONE
     exit
+{% endhighlight %}
 
 Nginx serves the static files in `/www/aboutus/devblog`.
 

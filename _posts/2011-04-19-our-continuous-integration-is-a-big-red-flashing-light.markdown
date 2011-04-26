@@ -46,8 +46,10 @@ flashed his [USB Serial](http://www.pjrc.com/teensy/usb_serial.html) shell onto
 the microcontroller. With this code installed on the Teensy I could plug it into
 a USB, and toggle the built in LED on or off with shell commands like this:
 
+{% highlight bash %}
     echo "d6=1" > /dev/cu.usbmodem12341
     echo "d6=0" > /dev/cu.usbmodem12341
+{% endhighlight %}
 
 Progress.
 
@@ -69,6 +71,7 @@ The last step was getting the whole rig hooked up to our CI server.  We use
 builds. I wrote a simple bash script that hits the server and toggles the pin 6
 (the light) on the Teensy based on the response.  It looks something like this:
 
+{% highlight bash %}
     #!/bin/sh
     # Monitor cruisecontrol and trigger red light when there's a broken build.
     # Also turn the light on when we don't get a 200 response from the server.
@@ -94,6 +97,7 @@ builds. I wrote a simple bash script that hits the server and toggles the pin 6
        (sleep 1; echo "d6=0") > /dev/cu.usbmodem12341
      fi
     done
+{% endhighlight %}
 
 I set this up as a startup item on our reception computer and bam!, we were
 done.
