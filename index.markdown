@@ -4,11 +4,11 @@ title: AboutUs.org Developer Blog
 ---
 
 <div class="index">
-<h1>Recent posts...</h1>
+<h1 class='tagline'>Experiences in Software Development at AboutUs</h1>
 <ul class="posts">
 {% for post in site.posts %}
   <li>
-    <div class="meta-data">
+    <div class="list-meta meta">
     <div class="author">
     {% include author_short.html %}
     </div>
