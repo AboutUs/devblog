@@ -16,13 +16,17 @@ h1.tagline{
 
 
 header {
-  border-top: 3px solid #00a109;
+  border-bottom: 3px solid #00a109;
   margin: 0 0 20px;
+  background-image: url('/images/header-bg.png');
+  background-repeat: repeat-x;
 }
 
 header h2 {
    margin: 0;
-   padding: 20px;
+   padding: 0px;
+   color : #fff;
+   font-family: "Courier New", Courier, monospace;
 }
 
 
@@ -42,12 +46,12 @@ footer a.last {
 
 
 header h2 a:link, header h2 a:visited {
-  color: #42280a;
+  color: #fff;
   text-decoration: none;
 }
 
 header h2 a:hover, header h2 a:active {
-   text-decoration: underline;
+  color: #D4FFD6;
 }
 
 div.main {
@@ -131,7 +135,7 @@ div.post-meta ul.meta {
   clear: both;
 }
 
-div.post-meta .author, article .wrapper {
+div.post-meta .author, article.with-meta .wrapper {
   padding: 15px;
 }
 
@@ -150,6 +154,9 @@ article pre code {
   clear: both;
 }
 
+.index ul{
+  padding: 0;
+}
 
 .index ul li {
   list-style: none;
