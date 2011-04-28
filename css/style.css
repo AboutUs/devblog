@@ -44,6 +44,10 @@ footer a.last {
    margin: 0;
 }
 
+div.other-posts{
+  margin-left: 280px;
+}
+
 
 header h2 a:link, header h2 a:visited {
   color: #fff;

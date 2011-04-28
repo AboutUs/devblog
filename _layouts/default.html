@@ -55,6 +55,16 @@
         {% endif %}
 
         <div class="clearfix"></div>
+        {% if page.author %}
+        <div class="other-posts">
+          <h4>Other posts...</h4>
+          <ul>
+            {% for post in site.posts %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
     </div>
 
     <footer>
