@@ -1,7 +1,7 @@
 ---
 layout: default
 author: sam
-synopsis: Meet our Kanban board we use to organize our work, and radiate information around the office.  Quick, it's broken and we need to fix it...
+synopsis: Meet the Kanban board. We use it to organize our work and radiate information around our office.  Quick, it's broken and we need to fix it...
 ---
 
 A lot of people talk about agile. We try to be agile.
