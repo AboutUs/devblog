@@ -65,4 +65,4 @@ but it cuts down a lot on the effort we must put towards
 coordinating our efforts.  We keep trying to get more aspects of
 our work reflected on the board, and that's almost never a
 mistake.  Everyone in the company can use it to see and
-communicate their work, and help march cards across.
+communicate their work, and move cards across.
