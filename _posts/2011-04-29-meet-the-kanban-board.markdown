@@ -12,8 +12,7 @@ Manifesto doesn't hurt.
 Our day to day process revolves around a plexiglass kanban board.
 I'd like to show it to you.
 
-Meet the kanban board.
---
+#### Meet the kanban board.
 
 ![aboutus kanban board](/images/meet-kanban/kanban5.jpg)
 
