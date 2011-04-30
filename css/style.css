@@ -141,6 +141,7 @@ div.post-meta ul.meta {
 
 div.post-meta .author, article.with-meta .wrapper {
   padding: 15px;
+  font-size: 14px;
 }
 
 article code {
