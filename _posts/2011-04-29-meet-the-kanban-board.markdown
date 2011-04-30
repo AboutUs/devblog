@@ -4,7 +4,7 @@ author: sam
 synopsis: Meet our Kanban board we use to organize our work, and radiate information around the office.  Quick, it's broken and we need to fix it...
 ---
 
-A lot of people talk about *agile*. We try to *be* agile.
+A lot of people talk about agile. We try to be agile.
 Working with one of the
 [signers](http://agilemanifesto.org/authors.html) of the Agile
 Manifesto doesn't hurt.
@@ -20,40 +20,38 @@ Meet the kanban board.
 The kanban board does a lot for us.  It radiates information.
 It's been called an *agile innovation*.
 
-It helps us remember what we're working on.
---
+#### It helps us remember what we're working on.
 
 
 ![kanban organize our work](/images/meet-kanban/kanban7.jpg)
 
-We know who's working on what.
---
+#### We know who's working on what.
 
 ![kanban who's doing what](/images/meet-kanban/kanban2.jpg)
 
-We can see what's coming up too.
---
+#### We can see what's coming up too.
+
 ![kanban planned column](/images/meet-kanban/kanban6.jpg)
 <br/><br/>
 We try to keep Martin on low hanging features.
 
-It tells us when too much is going on.
---
+#### It tells us when too much is going on.
+
 ![kanban too much going on](/images/meet-kanban/kanban4.jpg)
 <br/><br/>
 
-And sometimes it breaks and we have to change it.
---
+#### And sometimes it breaks and we have to change it.
+
 ![kanban sometimes we have to change it](/images/meet-kanban/kanban1.jpg)
 <br/><br/>
 
-It gives us some time to decide if things are really done.
---
+#### It gives us some time to decide if things are really done.
+
 ![kanban accept column](/images/meet-kanban/kanban8.jpg)
 <br/><br/>
 
-And it asks us to show them off when they are.
---
+#### And it asks us to show them off when they are.
+
 ![kanban demo column](/images/meet-kanban/kanban9.jpg)
 <br/><br/>
 
