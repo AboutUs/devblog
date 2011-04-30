@@ -1,6 +1,7 @@
 body {
   font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
   background: #f0f0f0;
+  width : 980px;
 }
 
 
@@ -27,6 +28,7 @@ header h2 {
    padding: 0px;
    color : #fff;
    font-family: "Courier New", Courier, monospace;
+   white-space: nowrap
 }
 
 
