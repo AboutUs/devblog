@@ -1,7 +1,7 @@
 ---
 layout: default
 author: sam
-synopsis: This is the first post for AboutUs' programming blog.
+synopsis: This is the first post for AboutUs' programming blog.  I describe our hacker-centric blogger setup powered by git, jekyll, and nginx.
 ---
 
 This is the first post for AboutUs' programming blog.  The blog's
@@ -13,7 +13,6 @@ vim).  The posts go in a `_posts` directory and look like this:
 
     _posts:
     2011-04-08-initial-commit.markdown
-
 
 [Jekyll](http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html)
 is used to convert the content textile, markdown, and html
@@ -54,22 +53,25 @@ There's a git post-receive hook that regenerates the site whenever
 someone pushes a change.
 
     devblog # vi .git/hooks/post-receive
-    #!/bin/sh
-    #
-    GIT_REPO=/www/aboutus/devblog.git
-    TMP_GIT_CLONE=/tmp/devblog
-    PUBLIC_WWW=/www/aboutus/devblog
 
-    git clone $GIT_REPO $TMP_GIT_CLONE
-    jekyll --no-auto $TMP_GIT_CLONE $PUBLIC_WWW
-    rm -Rf $TMP_GIT_CLONE
-    exit
+{% highlight bash %}
+#!/bin/sh
+#
+GIT_REPO=/www/aboutus/devblog.git
+TMP_GIT_CLONE=/tmp/devblog
+PUBLIC_WWW=/www/aboutus/devblog
+
+git clone $GIT_REPO $TMP_GIT_CLONE
+jekyll --no-auto $TMP_GIT_CLONE $PUBLIC_WWW
+rm -Rf $TMP_GIT_CLONE
+exit
+{% endhighlight %}
 
 Nginx serves the static files in `/www/aboutus/devblog`.
 
 Deploying is just a `git push`.
 
-    devblog [master] $ git push 
+    devblog [master] $ git push
     Counting objects: 23, done.
     Delta compression using up to 2 threads.
     Compressing objects: 100% (9/9), done.
@@ -82,4 +84,16 @@ Deploying is just a `git push`.
     Killed by signal 1.
     To blog@devblog:/www/aboutus/devblog.git
        12aa781..ab54f06  master -> master
+
+Adding Syntax Highlighting
+--
+
+To add syntax highlighting I just had to install Pygments, which is a cool
+python project.
+
+I did this with `easy_install`.
+
+    $ easy_install Pygments
+
+
 

@@ -1,15 +1,19 @@
 {% if "Please read this message" == "Here is a formatting example" %}
-  <img src="http://www.gravatar.com/avatar/00001111222223333344455555?s=40"> Your name
+  <img src="http://www.gravatar.com/avatar/00001111222223333344455555?s=40"/> Your name
 {% elsif page.author == 'sam' or post.author == 'sam' %}
-  <img src="http://www.gravatar.com/avatar/1391e75fba1f7f238dd7c400ed06a008?s=40"> Sam Goldstein
+  <img src="http://www.gravatar.com/avatar/1391e75fba1f7f238dd7c400ed06a008?s=40"/> Sam Goldstein
 {% elsif page.author == 'jd' or post.author == 'jd' %}
-  <img src="http://www.gravatar.com/avatar/a3d6887041bc564a5d60cdc811ae4ef9?s=40"> JD Huntington
+  <img src="http://www.gravatar.com/avatar/a3d6887041bc564a5d60cdc811ae4ef9?s=40"/> JD Huntington
 {% elsif page.author == 'thomas' or post.author == 'thomas' %}
-  <img src="http://www.gravatar.com/avatar/5b01f9bc964551be904f4636c556428e?s=40 "> Thomas Luce
+  <img src="http://www.gravatar.com/avatar/5b01f9bc964551be904f4636c556428e?s=40 "/> Thomas Luce
 {% elsif page.author == 'matt' or post.author == 'matt' %}
   <img src="http://www.gravatar.com/avatar/4f4fa88231dbb62441781bb7f914ef8c?s=40 "> Matt Youell
 {% elsif page.author == 'clifton' or post.author == 'clifton' %}
   Clifton
 {% elsif page.author == 'ward' or post.author == 'ward' %}
+  <img class="avatar" src="http://www.gravatar.com/avatar/5c819321db181e77b9010369807df2f9?s=40"/>
   Ward Cunningham
+{% elsif page.author == 'brad' or post.author == 'brad' %}
+  <img class="avatar" src="http://www.gravatar.com/avatar/887bf3e09db457313eee2e5e02294345?s=40"/>
+  Brad Heller
 {% endif %}

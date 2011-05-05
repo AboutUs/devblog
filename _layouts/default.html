@@ -5,7 +5,11 @@
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="description" content="Writings from the AboutUs.org development team">
+    {% if page.synopsis %}
+    <meta name="description" content="{{ page.synopsis }}">
+    {% else %}
+    <meta name="description" content="Experiences in Software Development at AboutUs.org">
+    {% endif %}
     <meta name="author" content="AboutUs.org development team">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -16,8 +20,13 @@
     <!--[if lt IE 8]><link rel="stylesheet" href="/css/ie.css" type="text/css" media="screen, projection"><![endif]-->
 
     <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="/css/syntax.css" type="text/css" media="screen, projection">
 
     <link rel="shortcut icon" href="/favicon.ico">
+
+    {% if page.canonical %}
+    <link rel="canonical" href="{{ page.canonical }}" />
+    {% endif %}
   </head>
   <body>
     <header>
@@ -30,7 +39,7 @@
 
     <div class="container main">
         {% if page.author %}
-        <div class="meta span-7">
+        <div class="post-meta meta span-7">
           <div class="author">{% include author.html %}</div>
         </div>
         <article class="with-meta last span-17 push-7">
@@ -50,6 +59,16 @@
         {% endif %}
 
         <div class="clearfix"></div>
+        {% if page.author %}
+        <div class="other-posts">
+          <h4>Other posts...</h4>
+          <ul>
+            {% for post in site.posts %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
     </div>
 
     <footer>
@@ -58,6 +77,7 @@
           &copy; 2011 AboutUs Inc.
         </div>
         <a href="http://www.aboutus.org">site</a>
+        <a href="http://www.aboutus.org/careers">careers</a>
         <a href="http://github.com/AboutUs">projects</a>
         <a class="last" href="http://feeds.feedburner.com/DevAboutusorg">feed</a>
 
@@ -65,10 +85,12 @@
     </footer>
 
     <script>
-      var _gaq=[['_setAccount','UA-435152-12'],['_trackPageview']];
-      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-      s.parentNode.insertBefore(g,s)}(document,'script'));
+      if(document.location.host == 'dev.aboutus.org'){
+        var _gaq=[['_setAccount','UA-435152-12'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+      }
     </script>
   </body>
 </html>

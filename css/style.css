@@ -1,6 +1,7 @@
 body {
   font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
   background: #f0f0f0;
+  min-width : 980px;
 }
 
 
@@ -8,15 +9,26 @@ h1,h2,h3,h4 {
   color: #42280a;
 }
 
+h1.tagline{
+  font-size: 1.2em;
+  font-variant: small-caps;
+  margin-left: 220px;
+}
+
 
 header {
-  border-top: 3px solid #00a109;
+  border-bottom: 3px solid #00a109;
   margin: 0 0 20px;
+  background-image: url('/images/header-bg.png');
+  background-repeat: repeat-x;
 }
 
 header h2 {
    margin: 0;
-   padding: 20px;
+   padding: 0px;
+   color : #fff;
+   font-family: "Courier New", Courier, monospace;
+   white-space: nowrap
 }
 
 
@@ -34,31 +46,32 @@ footer a.last {
    margin: 0;
 }
 
+div.other-posts{
+  margin-left: 280px;
+}
+
 
 header h2 a:link, header h2 a:visited {
-  color: #42280a;
+  color: #fff;
   text-decoration: none;
 }
 
 header h2 a:hover, header h2 a:active {
-   text-decoration: underline;
+  color: #D4FFD6;
 }
 
 div.main {
   position: relative;
 }
 
-div.meta {
+div.post-meta {
   left: 0;
   padding-right: 100px;
   position: absolute;
 }
 
 article.with-meta {
-
-}
-
-article {
+   background: #fff;
    -moz-box-shadow: 0 0 2px #888;
    -webkit-box-shadow: 0 0 2px #888;
    box-shadow: 0 0 2px #888;
@@ -66,43 +79,62 @@ article {
    -webkit-border-radius: 4px;
    -moz-border-radius: 4px;
    border-radius: 4px;
-  
-   
-   background: #fff;
+
 }
 
-div.meta {
+article h1 {
+  font-size: 2em;
+}
+article h2 {
+  font-size: 1.8em;
+}
+article h3 {
+  font-size: 1.5em;
+}
+article h4 {
+  font-size: 1.3em;
+}
+
+div.post-meta {
   margin-top: 45px;
+  -moz-box-shadow: 0 0 2px #888;
+  -webkit-box-shadow: 0 0 2px #888;
+  box-shadow: 0 0 2px #888;
 
-   -moz-box-shadow: 0 0 2px #888;
-   -webkit-box-shadow: 0 0 2px #888;
-   box-shadow: 0 0 2px #888;
-
-   border: 1px solid #8F7051;
-   -webkit-border-top-left-radius: 4px;
-   -webkit-border-bottom-left-radius: 4px;
-   -moz-border-radius-topleft: 4px;
-   -moz-border-radius-bottomleft: 4px;
-   border-top-left-radius: 4px;
-   border-bottom-left-radius: 4px;
-
-   background: #D7BEA3;
-
+  border: 1px solid #8F7051;
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  background: #D7BEA3;
 }
 
-div.meta .name {
+
+div.post-meta .name {
    font-size: 27px;
    text-align: right;
 
 }
 
-div.meta p.about {
+div.post-meta p.about {
    padding: 5px 0 0 79px;
 }
+
+div.list-meta {
+  padding:5px 10px;
+  margin-top: 20px;
+}
+
+div.meta.list-meta img {
+  margin-top:5px;
+}
+
 div.meta img {
    border: 1px solid #8F7051;
    margin: 12px 9px 9px 0;
-   
+
    -moz-box-shadow: 0 0 2px #8F7051
    -webkit-box-shadow: 0 0 2px #8F7051;
    box-shadow: 0 0 2px #8F7051;
@@ -114,12 +146,13 @@ div.meta img {
   float: left;
 }
 
-div.meta ul.meta {
+div.post-meta ul.meta {
   clear: both;
 }
 
-div.meta .author, article .wrapper {
+div.post-meta .author, article.with-meta .wrapper {
   padding: 15px;
+  font-size: 14px;
 }
 
 article code {
@@ -137,24 +170,47 @@ article pre code {
   clear: both;
 }
 
+.index ul{
+  padding: 0;
+}
 
 .index ul li {
-  border-top: 1px solid #ddd;
   list-style: none;
   margin: 10px 0;
   padding-top: 10px;
 }
 
-.index ul li .content {
-  padding-left: 220px;
+.index ul li:hover .content {
+  border:1px solid #ccf;
 }
-.index ul li .meta-data .when {
+.index ul li .content {
+  border:1px solid transparent;
+  margin-left: 200px;
+  padding: 10px 20px 0 ;
+  background: #fff;
+  min-height: 100px;
+  position: relative;
+  z-index: 100;
+  -moz-box-shadow: 0 0 2px #888;
+  -webkit-box-shadow: 0 0 2px #888;
+  box-shadow: 0 0 2px #888;
+
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 0px;
+  border-radius: 8px;
+}
+.index ul li .meta .when {
    font-style: oblique;
 }
-.index ul li .meta-data .author {
+.index ul li .meta .author {
   font-size: 125%;
 }
-.index ul li .meta-data {
+.index ul li .meta {
   float: left;
   width: 200px;
+  position: relative;
+}
+
+.index ul li a:hover{
+  color:#06c;
 }

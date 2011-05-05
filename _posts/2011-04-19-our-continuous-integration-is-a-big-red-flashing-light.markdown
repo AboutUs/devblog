@@ -46,8 +46,10 @@ flashed his [USB Serial](http://www.pjrc.com/teensy/usb_serial.html) shell onto
 the microcontroller. With this code installed on the Teensy I could plug it into
 a USB, and toggle the built in LED on or off with shell commands like this:
 
-    echo "d6=1" > /dev/cu.usbmodem12341
-    echo "d6=0" > /dev/cu.usbmodem12341
+{% highlight bash %}
+echo "d6=1" > /dev/cu.usbmodem12341
+echo "d6=0" > /dev/cu.usbmodem12341
+{% endhighlight %}
 
 Progress.
 
@@ -69,31 +71,33 @@ The last step was getting the whole rig hooked up to our CI server.  We use
 builds. I wrote a simple bash script that hits the server and toggles the pin 6
 (the light) on the Teensy based on the response.  It looks something like this:
 
-    #!/bin/sh
-    # Monitor cruisecontrol and trigger red light when there's a broken build.
-    # Also turn the light on when we don't get a 200 response from the server.
+{% highlight bash %}
+#!/bin/sh
+# Monitor cruisecontrol and trigger red light when there's a broken build.
+# Also turn the light on when we don't get a 200 response from the server.
 
-    bad_requests=0
-    while [ true ]; do
-     ci_url=http://ci.aboutus.com/XmlStatusReport.aspx
-     response=`curl -i --max-time 5 -s -u user:pw $ci_url`
+bad_requests=0
+while [ true ]; do
+ ci_url=http://ci.aboutus.com/XmlStatusReport.aspx
+ response=`curl -i --max-time 5 -s -u user:pw $ci_url`
 
-     # count how many times we've gotten a non-200 response from ci
-     if [ `echo $response | grep 'HTTP/1.1 200 OK' | wc -l` -ne 1 ] ; then
-       bad_requests=`expr $bad_requests + 1`
-     else
-       bad_requests=0
-     fi
+ # count how many times we've gotten a non-200 response from ci
+ if [ `echo $response | grep 'HTTP/1.1 200 OK' | wc -l` -ne 1 ] ; then
+   bad_requests=`expr $bad_requests + 1`
+ else
+   bad_requests=0
+ fi
 
-     # turn the light on when there's a build failure or we've had 3 consecutive
-     # non-200 responses from the ci server.
-     if [ `echo $response | grep 'lastBuildStatus="Failure"' | wc -l` -gt 0 ] \
-          || [ $bad_requests -gt 2 ]; then
-       (sleep 1; echo "d6=1") > /dev/cu.usbmodem12341
-     else
-       (sleep 1; echo "d6=0") > /dev/cu.usbmodem12341
-     fi
-    done
+ # turn the light on when there's a build failure or we've had 3 consecutive
+ # non-200 responses from the ci server.
+ if [ `echo $response | grep 'lastBuildStatus="Failure"' | wc -l` -gt 0 ] \
+      || [ $bad_requests -gt 2 ]; then
+   (sleep 1; echo "d6=1") > /dev/cu.usbmodem12341
+ else
+   (sleep 1; echo "d6=0") > /dev/cu.usbmodem12341
+ fi
+done
+{% endhighlight %}
 
 I set this up as a startup item on our reception computer and bam!, we were
 done.
