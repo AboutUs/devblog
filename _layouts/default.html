@@ -48,6 +48,7 @@
             <h4 class="when">posted on {{ page.date | date_to_string }}</h4>
 
             {{ content }}
+            {% include comments.html %}
           </div>
         </article>
         {% else %}
